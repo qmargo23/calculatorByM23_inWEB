@@ -1,6 +1,7 @@
 package pro.sky.calculatorbyM23.services.imp;
 
 import org.junit.jupiter.api.Test;
+import pro.sky.calculatorbyM23.exceptions.ArgumentIsZeroException;
 import pro.sky.calculatorbyM23.exceptions.NoArgumentSpecifiedException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -124,7 +125,7 @@ class CalcServiceImplTest {
 
     @Test
     public void shouldThrowIllegalArgumentExceptionWithMethodDivide() {
-        assertThrows(IllegalArgumentException.class, () -> out.divide(NUM1, ZERO));
+        assertThrows(ArgumentIsZeroException.class, () -> out.divide(NUM1, ZERO));
 //        assertThrows(IllegalArgumentException.class, () -> out.divide(NUM1, 5));//провал теста
     }
 }
